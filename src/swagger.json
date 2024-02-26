@@ -1,0 +1,53 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": " Youtube Subscriber  API",
+    "description": "API to manage subscribers",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/subscriber": {
+      "get": {
+        "summary": "Get all subscribers",
+        "responses": {
+          "200": {
+            "description": "A list of subscribers"
+          }
+        }
+      }
+    },
+    "/subscriber/name": {
+      "get": {
+        "summary": "Get subscriber names and subscribed channels",
+        "responses": {
+          "200": {
+            "description": "A list of subscriber names and subscribed channels"
+          }
+        }
+      }
+    },
+    "/subscriber/{id}": {
+      "get": {
+        "summary": "Get a subscriber by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single subscriber"
+          },
+          "400": {
+            "description": "Subscriber not found"
+          }
+        }
+      }
+    }
+  }
+}
