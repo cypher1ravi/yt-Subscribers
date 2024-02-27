@@ -9,7 +9,7 @@ app.get('/subscriber', async (req, res) => {
         const subscribers = await Subscribers.find()
         res.json(subscribers)
     } catch (error) {
-        res.send(500).json({ message: error.message })
+        res.sendStatus(500).json({ message: error.message })
     }
 });
 app.get('/subscriber/name', async (req, res) => {
